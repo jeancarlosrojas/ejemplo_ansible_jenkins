@@ -13,7 +13,7 @@ pipeline {
     }
     stage('install') {
       steps {
-        ansible-playbook playbook_instalar.yml
+        sh 'ansible-playbook playbook_instalar.yml'
       }
     }
   }
