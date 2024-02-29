@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label 'slave-lnx-01'
+  }
   stages {
     stage('fetch') {
       steps {
