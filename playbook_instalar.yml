@@ -10,3 +10,6 @@
     ansible.builtin.debug:
       msg: "Path /tmp exist"
     when: output_stat.stat.islnk is defined
+  
+  - include_role:
+      name: my_role
