@@ -13,7 +13,7 @@ pipeline {
     }
     stage('install') {
       steps {
-        ansiblePlaybook installation: 'ansible', inventory: 'hosts', playbook: 'playbook_instalar.yml'
+        ansible-playbook playbook_instalar.yml
       }
     }
   }
