@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
   tasks:
   - name: Get stats of the FS object
     ansible.builtin.stat:
