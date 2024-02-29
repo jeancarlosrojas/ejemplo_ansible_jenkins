@@ -1,12 +1,12 @@
 ---
-
 - hosts: all
-  connection: local
-  become: yes
-  become_user: root
   tasks:
-  - name: Install sysstat
-    apt:
-      name: sysstat
-      state: latest
-      update_cache: yes
+  - name: Get stats of the FS object
+    ansible.builtin.stat:
+      path: /tmp
+    register: output_stat
+
+  - name: Print a debug message
+    ansible.builtin.debug:
+      msg: "Path /tmp exist"
+    when: output_stat.stat.islnk is defined
